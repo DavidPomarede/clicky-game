@@ -4,9 +4,9 @@ import "./style.css";
 function FriendCard(props) {
   return (
     <div className="card">
-      <div className="container">
-        <div className="image">
-          <img class="img-responsive" alt={props.name} src={props.image} onClick={() => props.clickFriend(props.id)}/>
+      <div className="container" style={props.style}>
+        <div className="image" style={props.style}>
+          <img className="img-responsive" alt={props.name} src={props.image} onClick={() => props.clickFriend(props.id)}/>
         </div>
       </div>
       {/* <div className="content">

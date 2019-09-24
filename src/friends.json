@@ -2,73 +2,73 @@
   {
     "id": 1,
     "name": "Stelio",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/a/ac/Stelio.jpg/revision/latest?",
+    "image": "images/stelio.jpg",
     "clicked": false
   },
   {
     "id": 2,
     "name": "Steve",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/1/17/AmericanDad_09_Steve_v1F.jpg/revision/latest?cb=20120410225346",
+    "image": "images/steve.jpg",
     "clicked": false
   },
   {
     "id": 3,
     "name": "Roger",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/b/b9/AmericanDad_09_Roger_v1F.jpg/revision/latest?cb=20101125195058",
+    "image": "images/roger.jpg",
     "clicked": false
   },
   {
     "id": 4,
     "name": "Hayley",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/b/b6/Gal_hayley.jpg/revision/latest?cb=20121108030428",
+    "image": "images/hayley.jpg",
     "clicked": false
   },
   {
     "id": 5,
     "name": "Francine",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/1/16/AmericanDad_09_Francine_v1F.jpg/revision/latest?cb=20101130170555",
+    "image": "images/francine.jpg",
     "clicked": false
   },
   {
     "id": 6,
     "name": "Leslie",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/3/37/Leslie.jpg/revision/latest?cb=20091213183842",
+    "image": "images/leslie.jpg",
     "clicked": false
   },
   {
     "id": 7,
-    "name": "Stiles",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/e/e3/McGee.png/revision/latest?cb=20140428133621",
+    "name": "McGee",
+    "image": "images/mcgee.png",
     "clicked": false
   },
   {
     "id": 8,
-    "name": "Reginald",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/6/61/Reggie1.jpg/revision/latest?cb=20091206204838",
+    "name": "Reggie",
+    "image": "images/reggie.jpg",
     "clicked": false
   },
   {
     "id": 9,
     "name": "Stan",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/0/0d/AmericanDad_09_Stan_v1F.jpg/revision/latest?cb=20101130170500",
+    "image": "images/stan.jpg",
     "clicked": false
   },
   {
     "id": 10,
     "name": "Jeff",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/4/46/Jeff.png/revision/latest?cb=20100112231737",
+    "image": "images/jeff.png",
     "clicked": false
   },
   {
     "id": 11,
     "name": "Klaus",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/2/20/AmericanDad_09_Klaus_v1F.jpg/revision/latest?cb=20100929212721",
+    "image": "images/klaus.jpg",
     "clicked": false
   },
   {
     "id": 12,
-    "name": "Avery",
-    "image": "https://vignette.wikia.nocookie.net/americandad/images/0/09/Bullock.jpg/revision/latest?cb=20070711095415",
+    "name": "Bullock",
+    "image": "images/bullock.jpg",
     "clicked": false
   }
 ]

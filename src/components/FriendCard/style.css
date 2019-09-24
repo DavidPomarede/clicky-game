@@ -52,3 +52,9 @@ img {
   min-width: 75%;
   min-height: 75%;
 }
+
+.container {
+  margin: 2px; 
+  border: solid 2px;
+  background: grey;
+}
