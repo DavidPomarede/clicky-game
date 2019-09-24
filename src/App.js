@@ -12,59 +12,83 @@ class App extends Component {
     score: 0,
     highScore: 0,
     id: 0,
-    clicked: []
+    clicked: [],
+    match: false,
+    message: "Click on any character to begin"
   };
 
-  // componentDidMount() {
-  //   this.shuffle(this.state.friends);
-  // }
-
-
-  // handleBtnClick = event => {
-  //   // Get the data-value of the clicked button
-  //   const btnType = event.target.attributes.getNamedItem("data-value").value;
-  //   // Clone this.state to the newState object
-  //   // We'll modify this object and use it to set our component's state
-  //   const newState = { ...this.state };
-
-  //   if (btnType === "pick") {
-  //     // Set newState.match to either true or false depending on whether or not the dog likes us (1/5 chance)
-  //     newState.match = 1 === Math.floor(Math.random() * 5) + 1;
-
-  //     // Set newState.matchCount equal to its current value or its current value + 1 depending on whether the dog likes us
-  //     newState.matchCount = newState.match
-  //       ? newState.matchCount + 1
-  //       : newState.matchCount;
-  //   } else {
-  //     // If we thumbs down'ed the dog, we haven't matched with it
-  //     newState.match = false;
-  //   }
-  //   // Replace our component's state with newState, load the next dog image
-  //   this.setState(newState);
-  //   this.loadNextDog();
-  // };
 
     shuffle = (array) => {
       // return array;
     return array.sort( () => Math.random() - 0.5) 
     };
 
-  clickFriend = id => {
-    console.log(id);
-    let whichClick = id;
-    const clicked = [...this.state.clicked];
-    clicked.push(whichClick);
-    // console.log(clicked);
-    // console.log(friends);
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friendsList = [...this.state.friends];
-    var shuffledFriends = this.shuffle(friendsList);
-    console.log(JSON.stringify(shuffledFriends));
-    // Set this.state.friends equal to the new friends array
-    this.setState({ 
-      clicked: clicked,
-      friends: shuffledFriends });
-    // console.log(this.state.clicked);
+  clickFriend = (id, score, match) => {
+
+    for (var i = 0; i < this.state.clicked.length; i++) {
+      if (this.state.clicked[i] === id) {
+        match = true;
+        console.log("there's a match!");
+        // console.log(this.state.match);
+      } else {
+        match = false;
+      }
+    }
+
+
+
+
+    if (this.state.match || match) {
+      // const zero = 0;
+      if (this.state.score > this.state.highScore) {
+        this.setState({ 
+          highScore: this.state.score,
+          score: 0,
+          match: false,
+          message: "you lost! try again"
+        });
+        // this.setState({ highScore: this.state.score });
+        // console.log("high score!")
+        // this.state.highScore = this.state.score;
+      } else {
+        this.setState({ 
+
+          score: 0,
+          match: false,
+          message: "you lost! try again"
+        });
+      }
+
+
+
+    } else {
+      // const plusOne = this.state.score++;
+      // this.setState({ score: this.state.score + 1 });
+      // console.log(plusOne);
+
+      // console.log(id);
+      // console.log(this.state.clicked);
+      // console.log("score: " + this.state.score);
+      let whichClick = id;
+      const clicked = [...this.state.clicked];
+      clicked.push(whichClick);
+      const friendsList = [...this.state.friends];
+      var shuffledFriends = this.shuffle(friendsList);
+      // console.log(JSON.stringify(shuffledFriends));
+      this.setState({ 
+        score: this.state.score +1,
+        clicked: clicked,
+        friends: shuffledFriends, 
+        match: match,
+        message: "you got 1 point"
+      });
+
+    }
+
+
+
+
+
   };
 
 
@@ -74,7 +98,11 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Navbar />
+        <Navbar 
+          message={this.state.message}
+          score={this.state.score}
+          highScore={this.state.highScore}
+        />
         <Title>Clicky Game</Title>
         {this.state.friends.map(friend => (
           <FriendCard

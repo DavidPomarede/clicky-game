@@ -4,8 +4,10 @@ import "./style.css";
 function FriendCard(props) {
   return (
     <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
+      <div className="container">
+        <div className="image">
+          <img class="img-responsive" alt={props.name} src={props.image} onClick={() => props.clickFriend(props.id)}/>
+        </div>
       </div>
       {/* <div className="content">
         <ul>
@@ -20,9 +22,9 @@ function FriendCard(props) {
           </li>
         </ul>
       </div> */}
-      <span onClick={() => props.clickFriend(props.id)} className="remove">
+      {/* <span onClick={() => props.clickFriend(props.id)} className="remove">
         𝘅
-      </span>
+      </span> */}
     </div>
   );
 }
