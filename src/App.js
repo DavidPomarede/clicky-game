@@ -98,12 +98,14 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Navbar 
-          message={this.state.message}
-          score={this.state.score}
-          highScore={this.state.highScore}
-        />
-        <Title>Clicky Game</Title>
+        <Title>
+          Clicky Game!        
+          <Navbar 
+            message={this.state.message}
+            score={this.state.score}
+            highScore={this.state.highScore}
+          />
+        </Title>
         {this.state.friends.map(friend => (
           <FriendCard
             // removeFriend={this.removeFriend}

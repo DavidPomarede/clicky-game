@@ -19,9 +19,11 @@ const styles = {
 function Navbar(props) {
   return (
     <div style={styles.card}>
-      <span >{props.message}</span>
-      <span >Score: {props.score}</span>
+      <div style={styles.heading}>
+      <span >{props.message} ... </span>
+      <span >Score: {props.score} </span>
       <span >High Score: {props.highScore} </span>
+      </div>
     </div>
   );
 }
