@@ -37,7 +37,7 @@ class App extends Component {
 
 
     if (this.state.match || match) {
-      // const zero = 0;
+
       if (this.state.score > this.state.highScore) {
         this.setState({ 
           highScore: this.state.score,
@@ -45,9 +45,7 @@ class App extends Component {
           match: false,
           message: "You lost! try again"
         });
-        // this.setState({ highScore: this.state.score });
-        // console.log("high score!")
-        // this.state.highScore = this.state.score;
+
       } else {
         this.setState({ 
 
@@ -66,17 +64,19 @@ class App extends Component {
       const clicked = [...this.state.clicked];
       clicked.push(whichClick);
       const friendsList = [...this.state.friends];
-      var shuffledFriends = this.shuffle(friendsList);
+      // const shuffledFriends = this.shuffle(friendsList);
 
       this.setState({ 
         score: 0,
         clicked: clicked,
-        friends: shuffledFriends, 
+        friends: friendsList, 
         match: match,
+        highScore: 12,
         message: "You Won!"
       });
         return
       } 
+
       let whichClick = id;
       const clicked = [...this.state.clicked];
       clicked.push(whichClick);
