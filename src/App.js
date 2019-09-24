@@ -62,26 +62,38 @@ class App extends Component {
 
 
     } else {
-      // const plusOne = this.state.score++;
-      // this.setState({ score: this.state.score + 1 });
-      // console.log(plusOne);
 
-      // console.log(id);
-      // console.log(this.state.clicked);
-      // console.log("score: " + this.state.score);
+      while (this.state.score > 11) {
       let whichClick = id;
       const clicked = [...this.state.clicked];
       clicked.push(whichClick);
       const friendsList = [...this.state.friends];
       var shuffledFriends = this.shuffle(friendsList);
-      // console.log(JSON.stringify(shuffledFriends));
+
+      this.setState({ 
+        score: 0,
+        clicked: clicked,
+        friends: shuffledFriends, 
+        match: match,
+        message: "You Won!"
+      });
+        return
+      } 
+      let whichClick = id;
+      const clicked = [...this.state.clicked];
+      clicked.push(whichClick);
+      const friendsList = [...this.state.friends];
+      var shuffledFriends = this.shuffle(friendsList);
+
       this.setState({ 
         score: this.state.score +1,
         clicked: clicked,
         friends: shuffledFriends, 
-        match: match,
+        match: false,
         message: "You got 1 point!"
       });
+      
+
 
     }
 
