@@ -11,12 +11,13 @@ class App extends Component {
     friends: friends,
     score: 0,
     highScore: 0,
-    id: 0
+    id: 0,
+    clicked: []
   };
 
-  componentDidMount() {
-    this.shuffle(this.state.friends);
-  }
+  // componentDidMount() {
+  //   this.shuffle(this.state.friends);
+  // }
 
 
   // handleBtnClick = event => {
@@ -43,19 +44,31 @@ class App extends Component {
   //   this.loadNextDog();
   // };
 
-
-
+    shuffle = (array) => {
+      // return array;
+    return array.sort( () => Math.random() - 0.5) 
+    };
 
   clickFriend = id => {
+    console.log(id);
+    let whichClick = id;
+    const clicked = [...this.state.clicked];
+    clicked.push(whichClick);
+    // console.log(clicked);
+    // console.log(friends);
     // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.shuffle(this.friends);
+    const friendsList = [...this.state.friends];
+    var shuffledFriends = this.shuffle(friendsList);
+    console.log(JSON.stringify(shuffledFriends));
     // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-
+    this.setState({ 
+      clicked: clicked,
+      friends: shuffledFriends });
+    // console.log(this.state.clicked);
   };
 
 
-  shuffle = (array) => array.sort( () => Math.random() - 0.5) 
+
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
