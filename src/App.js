@@ -14,7 +14,7 @@ class App extends Component {
     id: 0,
     clicked: [],
     match: false,
-    message: "Click on any character to begin"
+    message: "Don't click on the same character twice! Click on any character to begin"
   };
 
 
@@ -45,7 +45,7 @@ class App extends Component {
           highScore: this.state.score,
           score: 0,
           match: false,
-          message: "you lost! try again"
+          message: "You lost! try again"
         });
         // this.setState({ highScore: this.state.score });
         // console.log("high score!")
@@ -55,7 +55,7 @@ class App extends Component {
 
           score: 0,
           match: false,
-          message: "you lost! try again"
+          message: "You lost! try again"
         });
       }
 
@@ -80,14 +80,10 @@ class App extends Component {
         clicked: clicked,
         friends: shuffledFriends, 
         match: match,
-        message: "you got 1 point"
+        message: "You got 1 point!"
       });
 
     }
-
-
-
-
 
   };
 

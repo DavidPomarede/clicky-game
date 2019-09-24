@@ -51,10 +51,14 @@ img {
   height: 80%;
   min-width: 75%;
   min-height: 75%;
+
 }
 
 .container {
   margin: 2px; 
   border: solid 2px;
-  background: grey;
+  background: rgb(0, 255, 242);
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
