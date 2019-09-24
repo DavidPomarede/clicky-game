@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import friends from "./friends.json";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+
   state = {
     friends: friends,
     score: 0,
@@ -18,10 +18,9 @@ class App extends Component {
   };
 
 
-    shuffle = (array) => {
-      // return array;
+  shuffle = (array) => {
     return array.sort( () => Math.random() - 0.5) 
-    };
+  };
 
   clickFriend = (id, score, match) => {
 
@@ -29,7 +28,6 @@ class App extends Component {
       if (this.state.clicked[i] === id) {
         match = true;
         console.log("there's a match!");
-        // console.log(this.state.match);
       } else {
         match = false;
       }
@@ -91,18 +89,11 @@ class App extends Component {
         friends: shuffledFriends, 
         match: false,
         message: "You got 1 point!"
-      });
-      
-
-
+      });     
     }
-
   };
 
 
-
-
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
@@ -116,14 +107,10 @@ class App extends Component {
         </Title>
         {this.state.friends.map(friend => (
           <FriendCard
-            // removeFriend={this.removeFriend}
             id={friend.id}
             key={friend.id}
             clickFriend={this.clickFriend}
-            // name={friend.name}
             image={friend.image}
-            // occupation={friend.occupation}
-            // location={friend.location}
           />
         ))}
       </Wrapper>
